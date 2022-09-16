@@ -8,6 +8,9 @@ using namespace std;
 
 void Build::legalMoves(string arr[][COLS], int currentRow, int currentCol) {
     
+    const int
+        MOVE1 = 1, MOVE2 = 2, MOVE3 = 3, MOVE4 = 4, MOVE5 = 5, MOVE6 = 6, MOVE7 = 7,MOVE8 = 8;
+    
     //Initialize array with empty spaces
     for (int r = 0; r < ROWS; r++)
     {
@@ -40,15 +43,15 @@ void Build::legalMoves(string arr[][COLS], int currentRow, int currentCol) {
     col = currentCol + 1;
     if (row >= 0 && row < 8 && col >= 0 && col < 8)
     {
-        cout << "1 -- UP A ------ board[" << row << "][" << col << "] or \n";
-        arr[row][col] = "[L]";
+        cout << "1 -- board[" << row << "][" << col << "] or \n";
+        arr[row][col] = "[1]";
     }
     row = currentRow - 1;
     col = currentCol + 2;
     if (row >= 0 && row < 8 && col >= 0 && col < 8)
     {
-        cout << "2 -- UP B ------ board[" << row << "][" << col << "] or \n";
-        arr[row][col] = "[L]";
+        cout << "2 -- board[" << row << "][" << col << "] or \n";
+        arr[row][col] = "[2]";
     }
 
     // to move right
@@ -56,15 +59,15 @@ void Build::legalMoves(string arr[][COLS], int currentRow, int currentCol) {
     col = currentCol + 2;
     if (row >= 0 && row < 8 && col >= 0 && col < 8)
     {
-        cout << "3 -- RIGHT A --- board[" << row << "][" << col << "] or \n";
-        arr[row][col] = "[L]";
+        cout << "3 -- board[" << row << "][" << col << "] or \n";
+        arr[row][col] = "[3]";
     }
     row = currentRow + 2;
     col = currentCol + 1;
     if (row >= 0 && row < 8 && col >= 0 && col < 8)
     {
-        cout << "4 -- RIGHT B --- board[" << row << "][" << col << "] or \n";
-        arr[row][col] = "[L]";
+        cout << "4 -- board[" << row << "][" << col << "] or \n";
+        arr[row][col] = "[4]";
     }
 
     // to move down
@@ -72,15 +75,15 @@ void Build::legalMoves(string arr[][COLS], int currentRow, int currentCol) {
     col = currentCol - 1;
     if (row >= 0 && row < 8 && col >= 0 && col < 8)
     {
-        cout << "5 -- DOWN A ---- board[" << row << "][" << col << "] or \n";
-        arr[row][col] = "[L]";
+        cout << "5 -- board[" << row << "][" << col << "] or \n";
+        arr[row][col] = "[5]";
     }
     row = currentRow + 1;
     col = currentCol - 2;
     if (row >= 0 && row < 8 && col >= 0 && col < 8)
     {
-        cout << "6 -- DOWN B ---- board[" << row << "][" << col << "] or \n";
-        arr[row][col] = "[L]";
+        cout << "6 -- board[" << row << "][" << col << "] or \n";
+        arr[row][col] = "[6]";
     }
 
     // to move left
@@ -88,15 +91,15 @@ void Build::legalMoves(string arr[][COLS], int currentRow, int currentCol) {
     col = currentCol - 2;
     if (row >= 0 && row < 8 && col >= 0 && col < 8)
     {
-        cout << "7 -- LEFT A ---- board[" << row << "][" << col << "] or \n";
-        arr[row][col] = "[L]";
+        cout << "7 -- board[" << row << "][" << col << "] or \n";
+        arr[row][col] = "[7]";
     }
     row = currentRow - 2;
     col = currentCol - 1;
     if (row >= 0 && row < 8 && col >= 0 && col < 8)
     {
-        cout << "8 -- LEFT B ---- board[" << row << "][" << col << "] or \n";
-        arr[row][col] = "[L]";
+        cout << "8 -- board[" << row << "][" << col << "] or \n";
+        arr[row][col] = "[8]";
     }
 
 
