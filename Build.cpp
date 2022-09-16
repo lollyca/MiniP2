@@ -8,9 +8,9 @@ using namespace std;
 
 void Build::legalMoves(string arr[][COLS], int currentRow, int currentCol) {
     
-    const int
-        MOVE1 = 1, MOVE2 = 2, MOVE3 = 3, MOVE4 = 4, MOVE5 = 5, MOVE6 = 6, MOVE7 = 7,MOVE8 = 8;
-    
+    const int MOVE1 = 1, MOVE2 = 2, MOVE3 = 3, MOVE4 = 4, MOVE5 = 5, MOVE6 = 6, MOVE7 = 7,MOVE8 = 8;
+    int choice;
+
     //Initialize array with empty spaces
     for (int r = 0; r < ROWS; r++)
     {
@@ -115,5 +115,96 @@ void Build::legalMoves(string arr[][COLS], int currentRow, int currentCol) {
             cout << arr[r][c];
         }
         cout << endl;
+    }
+
+    //GETTING USER CHOICE:
+    cout << "\n";
+    cout << "What is your next move? ---> ";
+    cin >> choice;
+    cout << "\n";
+
+    switch (choice)
+    {
+    case MOVE1:
+
+        row = currentRow - 2;
+        col = currentCol + 1;
+        if (row >= 0 && row < 8 && col >= 0 && col < 8)
+        {
+            cout << "Your current position on the board is [" << row << "][" << col << "]\n";
+            arr[row][col] = "[X]";
+        }
+        break;
+
+    case MOVE2:
+        row = currentRow - 1;
+        col = currentCol + 2;
+        if (row >= 0 && row < 8 && col >= 0 && col < 8)
+        {
+            cout << "Your current position on the board is [" << row << "][" << col << "]\n";
+            arr[row][col] = "[X]";
+        }
+        break;
+
+    case MOVE3:
+        row = currentRow + 1;
+        col = currentCol + 2;
+        if (row >= 0 && row < 8 && col >= 0 && col < 8)
+        {
+            cout << "Your current position on the board is [" << row << "][" << col << "]\n";
+            arr[row][col] = "[X]";
+        }
+        break;
+
+    case MOVE4:
+        row = currentRow + 2;
+        col = currentCol + 1;
+        if (row >= 0 && row < 8 && col >= 0 && col < 8)
+        {
+            cout << "Your current position on the board is [" << row << "][" << col << "]\n";
+            arr[row][col] = "[X]";
+        }
+        break;
+
+    case MOVE5:
+        row = currentRow + 2;
+        col = currentCol - 1;
+        if (row >= 0 && row < 8 && col >= 0 && col < 8)
+        {
+            cout << "Your current position on the board is [" << row << "][" << col << "]\n";
+            arr[row][col] = "[X]";
+        }
+        break;
+
+    case MOVE6:
+        row = currentRow + 1;
+        col = currentCol - 2;
+        if (row >= 0 && row < 8 && col >= 0 && col < 8)
+        {
+            cout << "Your current position on the board is [" << row << "][" << col << "]\n";
+            arr[row][col] = "[X]";
+        }
+        break;
+
+    case MOVE7:
+        row = currentRow - 1;
+        col = currentCol - 2;
+        if (row >= 0 && row < 8 && col >= 0 && col < 8)
+        {
+            cout << "Your current position on the board is [" << row << "][" << col << "]\n";
+            arr[row][col] = "[X]";
+        }
+        break;
+
+    case MOVE8:
+        row = currentRow - 2;
+        col = currentCol - 1;
+        if (row >= 0 && row < 8 && col >= 0 && col < 8)
+        {
+            cout << "Your current position on the board is [" << row << "][" << col << "]\n";
+            arr[row][col] = "[X]";
+        }
+        break;
+
     }
 }
