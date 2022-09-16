@@ -100,4 +100,5 @@ void Build::legalMoves(string arr[][COLS], int currentRow, int currentCol) {
         }
         cout << endl;
     }
+
 }
