@@ -13,6 +13,9 @@ public:
     static const int COLS = 8;
 
     void legalMoves(string arr[][COLS], int, int);
+    void restart(string arr[][COLS], int currentRow, int currentCol);
+    bool withinBounds(int row, int col);
+    void printMovePosition(int row, int col, string option, string arr[][COLS]);
 };
 
 #endif

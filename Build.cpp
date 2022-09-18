@@ -33,7 +33,8 @@ void Build::legalMoves(string arr[][COLS], int currentRow, int currentCol) {
         }
         cout << endl;
     }
-    int row, col;
+    int row = 0;
+    int col = 0;
     
     cout << "\n";
     cout << "For this position legal moves are:\n";
@@ -41,66 +42,39 @@ void Build::legalMoves(string arr[][COLS], int currentRow, int currentCol) {
     // to move up
     row = currentRow - 2;
     col = currentCol + 1;
-    if (row >= 0 && row < 8 && col >= 0 && col < 8)
-    {
-        cout << "1 -- board[" << row << "][" << col << "] or \n";
-        arr[row][col] = "[1]";
-    }
+    printMovePosition(row, col, "1", arr);
+
     row = currentRow - 1;
     col = currentCol + 2;
-    if (row >= 0 && row < 8 && col >= 0 && col < 8)
-    {
-        cout << "2 -- board[" << row << "][" << col << "] or \n";
-        arr[row][col] = "[2]";
-    }
-
+    printMovePosition(row, col, "2", arr);
+    
     // to move right
     row = currentRow + 1;
     col = currentCol + 2;
-    if (row >= 0 && row < 8 && col >= 0 && col < 8)
-    {
-        cout << "3 -- board[" << row << "][" << col << "] or \n";
-        arr[row][col] = "[3]";
-    }
+    printMovePosition(row, col, "3", arr);
+
     row = currentRow + 2;
     col = currentCol + 1;
-    if (row >= 0 && row < 8 && col >= 0 && col < 8)
-    {
-        cout << "4 -- board[" << row << "][" << col << "] or \n";
-        arr[row][col] = "[4]";
-    }
+    printMovePosition(row, col, "4", arr);
 
     // to move down
     row = currentRow + 2;
     col = currentCol - 1;
-    if (row >= 0 && row < 8 && col >= 0 && col < 8)
-    {
-        cout << "5 -- board[" << row << "][" << col << "] or \n";
-        arr[row][col] = "[5]";
-    }
+    printMovePosition(row, col, "5", arr);
+
     row = currentRow + 1;
     col = currentCol - 2;
-    if (row >= 0 && row < 8 && col >= 0 && col < 8)
-    {
-        cout << "6 -- board[" << row << "][" << col << "] or \n";
-        arr[row][col] = "[6]";
-    }
+    printMovePosition(row, col, "6", arr);
 
     // to move left
     row = currentRow - 1;
     col = currentCol - 2;
-    if (row >= 0 && row < 8 && col >= 0 && col < 8)
-    {
-        cout << "7 -- board[" << row << "][" << col << "] or \n";
-        arr[row][col] = "[7]";
-    }
+    printMovePosition(row, col, "7", arr);
+
     row = currentRow - 2;
     col = currentCol - 1;
-    if (row >= 0 && row < 8 && col >= 0 && col < 8)
-    {
-        cout << "8 -- board[" << row << "][" << col << "] or \n";
-        arr[row][col] = "[8]";
-    }
+    printMovePosition(row, col, "8", arr);
+
 
 
     // Show the board with all legal moves from the current position
@@ -129,82 +103,86 @@ void Build::legalMoves(string arr[][COLS], int currentRow, int currentCol) {
 
         row = currentRow - 2;
         col = currentCol + 1;
-        if (row >= 0 && row < 8 && col >= 0 && col < 8)
-        {
-            cout << "Your current position on the board is [" << row << "][" << col << "]\n";
-            arr[row][col] = "[X]";
-        }
+
         break;
 
     case MOVE2:
         row = currentRow - 1;
         col = currentCol + 2;
-        if (row >= 0 && row < 8 && col >= 0 && col < 8)
-        {
-            cout << "Your current position on the board is [" << row << "][" << col << "]\n";
-            arr[row][col] = "[X]";
-        }
         break;
 
     case MOVE3:
         row = currentRow + 1;
         col = currentCol + 2;
-        if (row >= 0 && row < 8 && col >= 0 && col < 8)
-        {
-            cout << "Your current position on the board is [" << row << "][" << col << "]\n";
-            arr[row][col] = "[X]";
-        }
         break;
 
     case MOVE4:
         row = currentRow + 2;
         col = currentCol + 1;
-        if (row >= 0 && row < 8 && col >= 0 && col < 8)
-        {
-            cout << "Your current position on the board is [" << row << "][" << col << "]\n";
-            arr[row][col] = "[X]";
-        }
         break;
 
     case MOVE5:
         row = currentRow + 2;
         col = currentCol - 1;
-        if (row >= 0 && row < 8 && col >= 0 && col < 8)
-        {
-            cout << "Your current position on the board is [" << row << "][" << col << "]\n";
-            arr[row][col] = "[X]";
-        }
         break;
 
     case MOVE6:
         row = currentRow + 1;
         col = currentCol - 2;
-        if (row >= 0 && row < 8 && col >= 0 && col < 8)
-        {
-            cout << "Your current position on the board is [" << row << "][" << col << "]\n";
-            arr[row][col] = "[X]";
-        }
         break;
 
     case MOVE7:
         row = currentRow - 1;
         col = currentCol - 2;
-        if (row >= 0 && row < 8 && col >= 0 && col < 8)
-        {
-            cout << "Your current position on the board is [" << row << "][" << col << "]\n";
-            arr[row][col] = "[X]";
-        }
         break;
 
     case MOVE8:
         row = currentRow - 2;
         col = currentCol - 1;
-        if (row >= 0 && row < 8 && col >= 0 && col < 8)
-        {
-            cout << "Your current position on the board is [" << row << "][" << col << "]\n";
-            arr[row][col] = "[X]";
-        }
         break;
 
+    }
+    if (withinBounds(row,col))
+    {
+        cout << "Your current position on the board is [" << row << "][" << col << "]\n";
+        arr[row][col] = "[X]";
+    }
+}
+
+void Build::restart(string arr[][COLS], int currentRow, int currentCol) {
+    for (int r = 0; r < ROWS; r++)
+    {
+        for (int c = 0; c < COLS; c++)
+        {
+            arr[r][c] = "[ ]";
+        }
+    }
+    cout << "Your current position on the board is [" << currentRow << "][" << currentCol << "] \n";
+    arr[currentRow][currentCol] = "[X]";
+
+    //Show the current position on the board
+    cout << "  0  1  2  3  4  5  6  7\n";
+    for (int r = 0; r < ROWS; r++)
+    {
+        cout << r;
+        for (int c = 0; c < COLS; c++)
+        {
+            cout << arr[r][c];
+        }
+        cout << endl;
+    }
+}
+
+bool Build::withinBounds(int row, int col)
+{
+    return row >= 0 && row < 8 && col >= 0 && col < 8;
+}
+
+void Build::printMovePosition(int row, int col, string option, string arr[][COLS])
+{
+    if (withinBounds(row,col))
+    {
+        cout << option << " -- board[" << row << "][" << col << "] or \n";
+        arr[row][col] = "[" + option + "]";
     }
 }
