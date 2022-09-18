@@ -16,6 +16,8 @@ public:
     void restart(string arr[][COLS], int currentRow, int currentCol);
     bool withinBounds(int row, int col);
     void printMovePosition(int row, int col, string option, string arr[][COLS]);
+    void displayBoard(string arr[][COLS], int row, int col);
+    void createBoard(string arr[][COLS]);
 };
 
 #endif

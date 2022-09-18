@@ -12,27 +12,13 @@ void Build::legalMoves(string arr[][COLS], int currentRow, int currentCol) {
     int choice;
 
     //Initialize array with empty spaces
-    for (int r = 0; r < ROWS; r++)
-    {
-        for (int c = 0; c < COLS; c++)
-        {
-            arr[r][c] = "[ ]";
-        }
-    }
+    createBoard(arr);
+
     cout << "Your current position on the board is [" << currentRow << "][" << currentCol << "] \n";
-    arr[currentRow][currentCol] = "[X]";
 
     //Show the current position on the board
-    cout << "  0  1  2  3  4  5  6  7\n";
-    for (int r = 0; r < ROWS; r++)
-    {
-        cout << r;
-        for (int c = 0; c < COLS; c++)
-        {
-            cout << arr[r][c];
-        }
-        cout << endl;
-    }
+    displayBoard(arr, currentRow, currentCol);
+
     int row = 0;
     int col = 0;
     
@@ -80,16 +66,7 @@ void Build::legalMoves(string arr[][COLS], int currentRow, int currentCol) {
     // Show the board with all legal moves from the current position
     // Legal moves will be indicated as 'L'
     cout << "\n";
-    cout << "  0  1  2  3  4  5  6  7\n";
-    for (int r = 0; r < ROWS; r++)
-    {
-        cout << r;
-        for (int c = 0; c < COLS; c++)
-        {
-            cout << arr[r][c];
-        }
-        cout << endl;
-    }
+    displayBoard(arr, row, col);
 
     //GETTING USER CHOICE:
     cout << "\n";
@@ -184,5 +161,30 @@ void Build::printMovePosition(int row, int col, string option, string arr[][COLS
     {
         cout << option << " -- board[" << row << "][" << col << "] or \n";
         arr[row][col] = "[" + option + "]";
+    }
+}
+
+void Build::displayBoard(string arr[][COLS], int row, int col) {
+    arr[row][col] = "[X]";
+
+    cout << "  0  1  2  3  4  5  6  7\n";
+    for (int r = 0; r < ROWS; r++)
+    {
+        cout << r;
+        for (int c = 0; c < COLS; c++)
+        {
+            cout << arr[r][c];
+        }
+        cout << endl;
+    }
+}
+
+void Build::createBoard(string arr[][COLS]) {
+    for (int r = 0; r < ROWS; r++)
+    {
+        for (int c = 0; c < COLS; c++)
+        {
+            arr[r][c] = "[ ]";
+        }
     }
 }
