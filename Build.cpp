@@ -15,7 +15,6 @@ void Build::run(string arr[][COLS], int currentRow, int currentCol) {
 
     //Initialize array with empty spaces
     createBoard(arr);
-
     cout << "Your current position on the board is [" << currentRow << "][" << currentCol << "] \n";
 
     //Show the current position on the board
@@ -64,11 +63,8 @@ void Build::run(string arr[][COLS], int currentRow, int currentCol) {
     row = currentRow - 2;
     col = currentCol - 1;
     printMovePosition(row, col, "8", arr);
-    
 
-
-    // Show the board with all legal moves from the current position
-    // Legal moves will be indicated as 'L'
+    // Show the board with all legal moves from the current position represented by numbers
     cout << "\n";
     displayBoard(arr, row, col);
 
