@@ -7,8 +7,8 @@ using namespace std;
 int main()
 {
     string board[8][8]; //it creates 
-    int rowMain, colMain; //local variables
 
+    int rowMain, colMain; //local variables
     cout << "Your current position on the board (input first row, then column): ";
     cin >> rowMain >> colMain;
 

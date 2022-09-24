@@ -19,7 +19,7 @@ public:
     void displayBoard(string arr[][COLS], int row, int col);
     void createBoard(string arr[][COLS]);
     void gettingUserNextMove(int currentRow, int currentCol, string arr[][COLS]);
-    //void legalMoves(int currentRow, int currentCol, string arr[][COLS]);
+    void legalMoves(string arr[][COLS], int currentRow, int currentCol);
 };
 
 #endif

@@ -15,13 +15,15 @@ void Build::run(string arr[][COLS], int currentRow, int currentCol) {
 
     //Initialize array with empty spaces
     createBoard(arr);
+    cout << "\n";
     cout << "Your current position on the board is [" << currentRow << "][" << currentCol << "] \n";
-
     //Show the current position on the board
     arr[currentRow][currentCol] = "[X]";
     displayBoard(arr, currentRow, currentCol);
 
-    
+    legalMoves(arr, currentRow, currentCol);
+
+    /*
     int row = 0;
     int col = 0;
     
@@ -67,6 +69,8 @@ void Build::run(string arr[][COLS], int currentRow, int currentCol) {
     // Show the board with all legal moves from the current position represented by numbers
     cout << "\n";
     displayBoard(arr, row, col);
+
+    */
 
     //GETTING USER NEXT MOVE:
     /*
@@ -124,8 +128,7 @@ void Build::run(string arr[][COLS], int currentRow, int currentCol) {
     displayBoard(arr, currentRow, currentCol);
     */
     gettingUserNextMove(currentRow, currentCol, arr);
-    cout << "\n";
-    cout << "For this position legal moves are:\n";
+    
 
 
     //RECALCULATING
@@ -217,7 +220,7 @@ void Build::printMovePosition(int row, int col, string option, string arr[][COLS
     }
 }
 
-void Build::displayBoard(string arr[][COLS], int row, int col) {
+void Build::displayBoard(string arr[][COLS], int currentRow, int currentCol) {
     //arr[row][col] = "[X]";
 
     cout << "  0  1  2  3  4  5  6  7\n";
@@ -298,13 +301,16 @@ void Build::gettingUserNextMove(int currentRow, int currentCol, string arr[][COL
     createBoard(arr);
     arr[currentRow][currentCol] = "[X]";
     displayBoard(arr, currentRow, currentCol);
+    legalMoves(arr, currentRow, currentCol);
 }
 
-/*
-void Build::legalMoves(int currentRow, int currentCol, string arr[][COLS]) {
+void Build::legalMoves(string arr[][COLS], int currentRow, int currentCol) {
 
     cout << "\n";
     cout << "For this position legal moves are:\n";
+
+    int row = 0;
+    int col = 0;
 
     // to move up
     row = currentRow - 2;
@@ -341,5 +347,9 @@ void Build::legalMoves(int currentRow, int currentCol, string arr[][COLS]) {
     row = currentRow - 2;
     col = currentCol - 1;
     printMovePosition(row, col, "8", arr);
+
+    // Show the board with all legal moves from the current position represented by numbers
+    cout << "\n";
+    displayBoard(arr, row, col);
+
 }
-*/
