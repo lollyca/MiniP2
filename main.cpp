@@ -14,7 +14,9 @@ int main()
 
     Build player; //Define an instance of the Build Class
 
-    player.legalMoves(board, rowMain, colMain);
+    player.run(board, rowMain, colMain);
+
+
 
     return 0;
 }

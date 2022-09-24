@@ -12,12 +12,14 @@ public:
     static const int ROWS = 8;
     static const int COLS = 8;
 
-    void legalMoves(string arr[][COLS], int, int);
+    void run(string arr[][COLS], int, int);
     void restart(string arr[][COLS], int currentRow, int currentCol);
     bool withinBounds(int row, int col);
     void printMovePosition(int row, int col, string option, string arr[][COLS]);
     void displayBoard(string arr[][COLS], int row, int col);
     void createBoard(string arr[][COLS]);
+    void gettingUserNextMove(int currentRow, int currentCol, string arr[][COLS]);
+    //void legalMoves(int currentRow, int currentCol, string arr[][COLS]);
 };
 
 #endif
