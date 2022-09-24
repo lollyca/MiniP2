@@ -11,6 +11,7 @@ class Build
 public:
     static const int ROWS = 8;
     static const int COLS = 8;
+    int currentRow, currentCol;
 
     void run(string arr[][COLS], int, int);
     void restart(string arr[][COLS], int currentRow, int currentCol);
@@ -20,6 +21,11 @@ public:
     void createBoard(string arr[][COLS]);
     void gettingUserNextMove(int currentRow, int currentCol, string arr[][COLS]);
     void legalMoves(string arr[][COLS], int currentRow, int currentCol);
+
+    void setRow(int testR);
+    void setCol(int testC);
+    int getRow();
+    int getCol();
 };
 
 #endif
