@@ -8,16 +8,20 @@ using namespace std;
 
 class Build
 {
-public:
     static const int ROWS = 8;
     static const int COLS = 8;
+    string arr[ROWS][COLS];
+    int currentRow, currentCol;
+public:
 
-    void legalMoves(string arr[][COLS], int, int);
-    void restart(string arr[][COLS], int currentRow, int currentCol);
+    void legalMoves();
+    void restart();
     bool withinBounds(int row, int col);
-    void printMovePosition(int row, int col, string option, string arr[][COLS]);
-    void displayBoard(string arr[][COLS], int row, int col);
-    void createBoard(string arr[][COLS]);
+    void printMovePosition(int row, int col, string option);
+    void displayBoard();
+    void createBoard();
+    void showInitialPosition();
+    void continueGame();
 };
 
 #endif
