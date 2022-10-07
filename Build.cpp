@@ -8,9 +8,6 @@ using namespace std;
 
 void Build::run(string arr[][COLS], int currentRow, int currentCol) {
 
-    const int OP1 = 1, OP2 = 2;
-    int gameMenu;
-
     //Initialize array with empty spaces
     createBoard(arr);
     cout << "\n";
@@ -19,41 +16,7 @@ void Build::run(string arr[][COLS], int currentRow, int currentCol) {
     arr[currentRow][currentCol] = "[X]";
     displayBoard(arr, currentRow, currentCol);
     legalMoves(arr, currentRow, currentCol);
-
-    do {
-        cout << "\n";
-        cout << "\t Menu" << endl;
-        cout << "Press 1 to keep playing this game" << endl;
-        cout << "Press 2 to restart the game" << endl;
-        cout << "Press 3 to quit" << endl;
-        cout << "---> ";
-        cin >> gameMenu;
-
-        switch (gameMenu)
-        {
-        case OP1:
-            //GETTING USER NEXT MOVE:
-            gettingUserNextMove(currentRow, currentCol, arr);
-            cout << currentRow;
-            cout << currentCol;
-
-            break;
-
-        case OP2:
-            int rowRestart, colRestart;
-            cout << "Your current position on the board (input first row, then column): ";
-            cin >> rowRestart >> colRestart;
-            createBoard(arr);
-            arr[rowRestart][colRestart] = "[X]";
-            displayBoard(arr, rowRestart, colRestart);
-            legalMoves(arr, rowRestart, colRestart);
-            break;
-        }
-    } while (gameMenu != 3);
-
 }
-
-
 
 void Build::setRow(int testR) {
     currentRow = testR;
